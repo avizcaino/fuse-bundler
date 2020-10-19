@@ -1,0 +1,30 @@
+{
+  "name": "@fuse-bundler/app",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Alex Vizcaino <avizcaino@uxland.es>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "rimraf dist && node --experimental-worker build.js && yarn build:cp-resources && yarn wb:generate && yarn build:mv-to-public",
+    "build:cp-resources": "ncp demo/manifest.webmanifest dist/manifest.webmanifest",
+    "build:mv-to-public": "rimraf public && mkdir public && mv -v dist public",
+    "serve": "rimraf dist && node --experimental-worker start.js",
+    "wb:generate": "workbox generateSW workbox-config.js"
+  },
+  "dependencies": {
+    "@material/mwc-button": "^0.19.1",
+    "@webcomponents/webcomponentsjs": "^2.4.4",
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "workbox-cli": "^5.1.4"
+  }
+}

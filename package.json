@@ -1,0 +1,19 @@
+{
+  "name": "fuse-bundler",
+  "private": true,
+  "main": "index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "@uxland/project-tools": "^1.0.0-alpha.16"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "serve:app": "lerna run serve --scope @fuse-bundler/app --stream",
+    "build:app": "lerna run build --scope @fuse-bundler/app --stream"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Fuse Bundler",
+  "short_name": "FB",
+  "theme_color": "#f4c700",
+  "background_color": "#2196f3",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.html",
+  "icons": []
+}
